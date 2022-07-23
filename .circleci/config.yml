@@ -16,10 +16,12 @@ jobs:
     steps:
       - checkout
       - sayhello:
-        to: "Omar"
+          to: "Omar"
       - run: echodsadas Hello, Bye!
-      - run: echo HELLO ERROR!!
-        when: on_fail
+      - run: 
+          command: "echo ERRORRRR!"
+          when: on_fail
+          
   say-bye:
     docker:
       - image: cimg/base:stable
