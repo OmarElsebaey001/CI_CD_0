@@ -5,7 +5,7 @@ commands:
     parameters:
       to:
         type: string
-        default: "Hello World"
+        default: "Mew World"
     steps:
       - run: echo << parameters.to >>
   
@@ -17,9 +17,6 @@ jobs:
       - checkout
       - sayhello:
         to: "Omar"
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
   say-bye:
     docker:
       - image: cimg/base:stable
