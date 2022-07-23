@@ -17,14 +17,20 @@ jobs:
       - checkout
       - sayhello:
         to: "Omar"
+      
+      - run:
+        name: "Say Bye"
+        command: "echodsadas Hello, Bye!"
+
+      - run:
+        name: Upload Failed Tests
+        command: "echo HELLO ERROR!!"
+        when: on_fail
   say-bye:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: "Say Bye"
-          command: "echo Hello, Bye!"
 workflows:
   say-hello-workflow:
     jobs:
