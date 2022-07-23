@@ -1,10 +1,22 @@
 version: 2.1
+commands:
+  sayhello:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
+  
 jobs:
   say-hello:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
+      - sayhello:
+        to: "Omar"
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
