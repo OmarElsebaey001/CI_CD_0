@@ -17,14 +17,8 @@ jobs:
       - checkout
       - sayhello:
         to: "Omar"
-      
-      - run:
-        name: "Say Bye"
-        command: "echodsadas Hello, Bye!"
-
-      - run:
-        name: Upload Failed Tests
-        command: "echo HELLO ERROR!!"
+      - run: echodsadas Hello, Bye!
+      - run: echo HELLO ERROR!!
         when: on_fail
   say-bye:
     docker:
